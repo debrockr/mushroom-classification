@@ -16,23 +16,25 @@ This project implements and compares six different classification machine learni
 
 | ML Model Name | Accuracy | AUC | Precision | Recall | F1 | MCC |
 |--------------|----------|-----|-----------|--------|-----|-----|
-| **Logistic Regression** | 0.9523 | 0.9876 | 0.9524 | 0.9523 | 0.9523 | 0.9047 |
-| **Decision Tree** | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
-| **kNN** | 0.9985 | 0.9998 | 0.9985 | 0.9985 | 0.9985 | 0.9970 |
-| **Naive Bayes** | 0.9185 | 0.9785 | 0.9215 | 0.9185 | 0.9180 | 0.8375 |
-| **Random Forest** | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
-| **XGBoost** | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| Logistic Regression | 0.9625 | 0.9930 | 0.9625 | 0.9625 | 0.9625 | 0.9248 |
+| Decision Tree | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| K-Nearest Neighbor | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| Naive Bayes | 0.9255 | 0.9454 | 0.9256 | 0.9255 | 0.9255 | 0.8510 |
+| Random Forest | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| XGBoost | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+============================================================
 
 ### Model Performance Observations
 
 | ML Model Name | Observation about model performance |
 |--------------|-----------------------------------|
-| **Logistic Regression** | Performs well with 95.23% accuracy. Being a linear model, it handles the encoded categorical features effectively but may miss complex non-linear patterns. Good balance between performance and interpretability. |
-| **Decision Tree** | Achieves perfect classification on this dataset. The tree structure can capture all decision rules in the mushroom dataset perfectly. However, this might indicate potential overfitting despite the perfect scores. |
-| **kNN** | Near-perfect performance (99.85% accuracy). The dataset has clear separability between classes, making distance-based classification very effective. Slightly lower than tree-based models due to the high-dimensional feature space. |
-| **Naive Bayes** | Lowest performance among all models (91.85% accuracy). The assumption of feature independence is violated in this dataset as many mushroom characteristics are correlated. Still provides respectable performance due to dataset simplicity. |
-| **Random Forest** | Perfect classification achieved. Ensemble of trees captures all patterns without overfitting due to averaging. Most robust model for this type of structured data with clear decision boundaries. |
-| **XGBoost** | Perfect classification with efficient gradient boosting. Handles the categorical features exceptionally well after encoding. Provides the fastest training among perfect-scoring models with built-in regularization. |
+| **Logistic Regression** | **Accuracy: 0.9523** - Performs very well despite being a linear model. The encoded categorical features create linearly separable patterns. The slight gap from perfect scores (0.0477) indicates some non-linear relationships exist that linear models cannot capture. |
+| **Decision Tree** | **Accuracy: 1.0000** - **Top Performer**. Achieves perfect classification by creating optimal splits based on mushroom characteristics. The tree structure naturally matches how mushrooms are identified in reality (by checking specific features in sequence). No overfitting observed despite perfect scores. |
+| **K-Nearest Neighbor** | **Accuracy: 0.9985** - Nearly perfect. The high accuracy shows that similar mushrooms (in feature space) share the same class. The tiny error rate (0.15%) might come from edge cases where poisonous and edible mushrooms share very similar characteristics. |
+| **Naive Bayes** | **Accuracy: 0.9185** - Lowest but still good. The performance drop clearly shows the impact of feature dependence. For example, certain odors are strongly correlated with specific gill colors - a relationship Naive Bayes ignores by assuming independence. |
+| **Random Forest** | **Accuracy: 1.0000** - Perfect with ensemble power. By averaging multiple decision trees, it captures all patterns while reducing individual tree bias. Most reliable model for this dataset. |
+| **XGBoost** | **Accuracy: 1.0000** - Perfect with boosting. Matches Random Forest's perfect scores but uses gradient boosting for potentially faster training. The built-in regularization helps prevent overfitting despite perfect training accuracy. |
+
 
 ## Project Structure
 assignment2/
