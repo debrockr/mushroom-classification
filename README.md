@@ -22,7 +22,6 @@ This project implements and compares six different classification machine learni
 | Naive Bayes | 0.9255 | 0.9454 | 0.9256 | 0.9255 | 0.9255 | 0.8510 |
 | Random Forest | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
 | XGBoost | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
-============================================================
 
 ### Model Performance Observations
 
